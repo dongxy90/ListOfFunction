@@ -1,0 +1,13 @@
+void KMP_table(string S, int kmp[]) {
+	int i = 1, j = -1, N = S.length();
+	kmp[0] = -1;
+	for (i = 1;i < N;i++) {
+		while (j >= 0 && S[i] != S[j + 1]) {
+			j = kmp[j];
+		}
+		if (S[i] == S[j + 1]) {
+			j++;
+		}
+		kmp[i] = j;
+	}
+}
