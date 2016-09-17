@@ -1,5 +1,4 @@
-
-void KMP_table(string S, int kmp[]) {
+void KMP_table(string S, int *kmp) {
 	int i = 1, j = -1, N = S.length();
 	kmp[0] = -1;
 	for (i = 1;i < N;i++) {
