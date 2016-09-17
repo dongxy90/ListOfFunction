@@ -1,3 +1,4 @@
+# KMP_table
 void KMP_table(string S, int kmp[]) {
 	int i = 1, j = -1, N = S.length();
 	kmp[0] = -1;
