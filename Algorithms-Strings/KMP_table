@@ -6,7 +6,7 @@ void KMP_table(string S, int *kmp) {
 			j = kmp[j - 1];
 		}
 		if (S[i] == S[j]) {
-			++j;
+			j++;
 		}
 		kmp[i] = j;
 	}
