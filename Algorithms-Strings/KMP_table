@@ -29,5 +29,5 @@ is equal to
 	}
 	kmp[i] = j;
 
-The reason is when S[i] is not the same with S[j], j is definitely 0. 
+The reason is when S[i] is not the same as S[j], j is definitely 0. 
 */
