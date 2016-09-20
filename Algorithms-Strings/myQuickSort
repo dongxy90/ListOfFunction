@@ -21,6 +21,8 @@ void qSort(int start, int end, int *arr) {
 }
 
 /* 
+Time complexity is O(n*log(n))
+
 Comment: 
 1. Last element of a block is chosen as the pivot, so it is stable;
 2. Result is from the smallest to the largest.
