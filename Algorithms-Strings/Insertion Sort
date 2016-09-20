@@ -19,4 +19,5 @@ void insertionSort(int N, int arr[]) {
     }
 }
 
-//Time complexity is O(n^2)
+// Time complexity is O(n^2)
+// Result is from the smallest to the largest.
