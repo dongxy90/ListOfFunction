@@ -1,0 +1,33 @@
+int sortOnce(int start, int end, int *arr) {
+	int firstRight = start;
+	for (int j = start;j<end;j++) {
+		if (arr[j] < arr[end]) {
+			swap(arr[j], arr[firstRight]);
+			firstRight++;
+		}
+	}
+	swap(arr[end], arr[firstRight]);
+	return firstRight;
+}
+
+void qSort(int start, int end, int *arr) {
+	int pivot = sortOnce(start, end, arr);
+	if (pivot - 1 - start > 0) {
+		qSort(start, pivot - 1, arr);
+	}
+	if (end - (pivot + 1) > 0) {
+		qSort(pivot + 1, end, arr);
+	}
+}
+
+/* 
+Time complexity is O(n*log(n)) for best and average case; 
+Time complexity is O(n^2) for worst case. 
+
+Comment: 
+1. Last element of a block is chosen as the pivot, so it is stable;
+2. Result is from the smallest to the largest.
+
+How to use: qSort(0, N-1, arr);
+where N is the size of the array, arr is the array you want to sort
+*/
