@@ -1,0 +1,38 @@
+void sortAction(int sortStart, int sortEnd, int *arr) {
+	int leftIdx = sortStart;
+	int leftEnd = (sortStart + sortEnd) / 2;
+	int rightIdx = leftEnd + 1;
+	int *tempArr = new int[sortEnd - sortStart + 1];
+	int k = 0;
+	while (leftIdx <= leftEnd && rightIdx <= sortEnd) {
+		if (arr[leftIdx] <= arr[rightIdx]) {
+			tempArr[k++] = arr[leftIdx++];
+		}
+		else {
+			tempArr[k++] = arr[rightIdx++];
+		}
+	}
+	while (leftIdx <= leftEnd) {
+		tempArr[k++] = arr[leftIdx++];
+	}
+	while (rightIdx <= sortEnd) {
+		tempArr[k++] = arr[rightIdx++];
+	}
+	int tempIdx = 0;
+	for (int i = sortStart;i <= sortEnd;i++) {
+		arr[i] = tempArr[tempIdx++];
+	}
+	delete [] tempArr;
+}
+
+void mergeSort(int start, int end, int *arr) {
+	if (start<end)
+	{
+		int leftEnd = (start + end) / 2;
+		int rightStart = leftEnd + 1;
+		mergeSort(start, leftEnd, arr);
+		mergeSort(rightStart, end, arr);
+		sortAction(start, end, arr);
+	}
+}
+
